@@ -3,7 +3,8 @@ import Navbar from "./Navbar";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import HomePage from "./HomePage";
 import GithubSearch from "../GitHubSearch/GithubSearch";
-import Footer from '../Footer/Footer'
+import GithubUserDetails from "../GitHubSearch/GitHubUserDetails";
+import Footer from "../Footer/Footer";
 
 class Home extends React.Component {
   render() {
@@ -14,9 +15,13 @@ class Home extends React.Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/Github" component={GithubSearch} />
+            <Route
+              exact
+              path="/githubuser/:username"
+              component={GithubUserDetails}
+            />
           </Switch>
         </BrowserRouter>
-
         <Footer />
       </div>
     );

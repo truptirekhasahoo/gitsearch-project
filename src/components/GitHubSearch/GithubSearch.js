@@ -6,7 +6,6 @@ class GithubSearch extends Component {
     super();
     this.state = {
       users: [],
-      userSelected: null,
     };
   }
 
@@ -54,7 +53,6 @@ class GithubSearch extends Component {
                   <div
                     class="card bg-light btn"
                     style={{ width: "15rem", float: "left", margin: "10px" }}
-                    onClick={()=>this.setState({ userSelected: userRow.login })}
                   >
                     <img
                       src={userRow.avatar_url}
@@ -64,6 +62,7 @@ class GithubSearch extends Component {
                     />
                     <div class="card-body">
                       <h5 class="card-title">{userRow.login}</h5>
+                      <a href={"githubuser/" + userRow.login} class="stretched-link"></a>
                     </div>
                   </div>
                 );
