@@ -6,7 +6,7 @@ class GithubSearch extends Component {
     super();
     this.state = {
       users: [],
-      selectedUser: null
+      userSelected: null,
     };
   }
 
@@ -38,33 +38,33 @@ class GithubSearch extends Component {
         <div class="row">
           <div class="col">
             <input type="text" id="textSearch"></input>
-            <button class="btn btn-primary ml-2" onClick={this.buttonSearchOnClick}>
+            <button
+              class="btn btn-primary ml-2"
+              onClick={this.buttonSearchOnClick}
+            >
               Search
             </button>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
-            <div class="container h-100">
+            <div className="card-columns">
               {this.state.users.map((userRow) => {
                 return (
-                  <div class="row my-2">
-                    <div class="col-8 text-light">
-                    <a href=''>
+                  <div
+                    class="card bg-light btn"
+                    style={{ width: "15rem", float: "left", margin: "10px" }}
+                    onClick={()=>this.setState({ userSelected: userRow.login })}
+                  >
                     <img
-                        src={userRow.avatar_url}
-                        style={{ height: "100px", float: "left", margin: '5px' }}
-                      />
-                      <div class="text-light">{userRow.login}</div>
-                    </a>
-                      {/* <img
-                        src={userRow.avatar_url}
-                        style={{ height: "100px", float: "left", margin: '5px' }}
-                      />
-                      <div class="text-light">{userRow.login}</div>
-                      <div class="text-light">{userRow.url}</div>
-                      <div class="text-light">{userRow.repos_url}</div> */}
-                    </div>                    
+                      src={userRow.avatar_url}
+                      class="card-img-top"
+                      style={{ padding: "10px" }}
+                      alt={userRow.login}
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">{userRow.login}</h5>
+                    </div>
                   </div>
                 );
               })}
