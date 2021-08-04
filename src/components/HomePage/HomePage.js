@@ -1,7 +1,6 @@
 import React from "react";
 import HomePageCarousel from "./HomePageCarousel";
 import HomeCard from "./HomeCard";
-import Footer from "../Footer/Footer";
 
 class HomePage extends React.Component {
   render() {

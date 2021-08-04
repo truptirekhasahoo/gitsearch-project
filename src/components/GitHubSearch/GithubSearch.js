@@ -48,12 +48,9 @@ class GithubSearch extends Component {
         <div class="row">
           <div class="col-12">
             <div className="card-columns">
-              {this.state.users.map((userRow) => {
+              {this.state.users.map((userRow, index) => {
                 return (
-                  <div
-                    class="card bg-light btn"
-                    style={{ width: "15rem", float: "left", margin: "10px" }}
-                  >
+                  <div class="card bg-light btn" style={{ width: "15rem", float: "left", margin: "10px" }} key={index}>
                     <img
                       src={userRow.avatar_url}
                       class="card-img-top"

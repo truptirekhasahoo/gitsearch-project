@@ -18,18 +18,18 @@ class GitHubUserDetails extends Component {
     axios
       .get(strURL)
       .then((response) => {
-        console.log(response.data);
+        //console.log(response.data);
         this.setState({ userDetails: response.data });
       })
       .catch((error) => {
         console.log(error);
       });
 
-    strURL += "/repos";
+    strURL = strURL + "/repos";
     axios
       .get(strURL)
       .then((response) => {
-        console.log(response.data);
+        //console.log(response.data);
         this.setState({ userRepos: response.data });
       })
       .catch((error) => {
@@ -41,7 +41,7 @@ class GitHubUserDetails extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div className="col mt-2">
             <Link to="/Github" className="btn btn-primary">
               Back To GitHub Search
             </Link>
